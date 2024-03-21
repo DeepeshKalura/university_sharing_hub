@@ -3,12 +3,26 @@
 import Header from "../components/Header";
 import { useConvexAuth } from "convex/react";
 import Loader from "../components/Loader";
+import useStoreUserEffect from "@/hooks/useStoreUserEffect";
 
 const Main: React.FC = () => {
     const { isAuthenticated, isLoading } = useConvexAuth();
 
     if (isLoading) {
+        if (isAuthenticated) {
+            useStoreUserEffect();
+        }
         return <Loader />
+    }
+
+    if (!isAuthenticated) {
+        return (
+            <div>
+                <h1>
+                    Are you a  how to reach her
+                </h1>
+            </div>
+        );
     }
     return (
         <div>

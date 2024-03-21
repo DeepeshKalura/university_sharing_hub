@@ -1,7 +1,16 @@
-const Main = () => {
+import Header from "../components/Header";
+
+const Main: React.FC = () => {
     return (
         <div>
-            <h1> Main Page </h1>
+
+
+            <Header />
+
+            <main className="container mx-auto py-8">
+                <h1 className="text-3xl font-bold mb-4">Welcome to University Sharing Hub</h1>
+            </main>
+
         </div>
     );
 };

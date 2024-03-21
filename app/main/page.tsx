@@ -3,8 +3,6 @@ import Header from "../components/Header";
 const Main: React.FC = () => {
     return (
         <div>
-
-
             <Header />
 
             <main className="container mx-auto py-8">

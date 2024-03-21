@@ -1,8 +1,14 @@
-// pages/index.js
+'use client'
 
 import Head from 'next/head';
+import { useRouter } from 'next/navigation';
+
 
 const Home = () => {
+  const router = useRouter();
+  const handleGetStartedClick = () => {
+    router.push('/sign-up');
+  };
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center">
       <Head>
@@ -15,9 +21,10 @@ const Home = () => {
         <h1 className="text-5xl font-bold mb-4">University Sharing Hub</h1>
         <p className="text-lg text-gray-700 mb-8">Share, Connect, Grow Together</p>
         <div className="flex justify-center mb-8">
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded" onClick={handleGetStartedClick}>
             Get Started
           </button>
+
         </div>
         <p className="text-gray-600 mb-8">Why choose University Sharing Hub?</p>
         <ul className="text-left text-gray-700 mb-8">

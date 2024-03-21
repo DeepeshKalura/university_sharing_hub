@@ -1,8 +1,15 @@
 "use client"
 
 import Header from "../components/Header";
+import { useConvexAuth } from "convex/react";
+import Loader from "../components/Loader";
 
 const Main: React.FC = () => {
+    const { isAuthenticated, isLoading } = useConvexAuth();
+
+    if (isLoading) {
+        return <Loader />
+    }
     return (
         <div>
             <Header />

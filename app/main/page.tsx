@@ -7,11 +7,9 @@ import useStoreUserEffect from "@/hooks/useStoreUserEffect";
 
 const Main: React.FC = () => {
     const { isAuthenticated, isLoading } = useConvexAuth();
+    useStoreUserEffect();
 
     if (isLoading) {
-        if (isAuthenticated) {
-            useStoreUserEffect();
-        }
         return <Loader />
     }
 
